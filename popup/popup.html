@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Time to Focus</h1>
+    <img src="../icons/logo.png" class="logo" />
+    <div class="add-container">
+      <input
+        type="text"
+        name="add-site"
+        id="add-site"
+        class="add add-site"
+        placeholder="Enter site url"
+        tabindex="1"
+      />
+      <img
+        src="../icons/add-icon.png"
+        class="add icon add-icon"
+        id="add-icon"
+        tabindex="2"
+      />
+    </div>
+    <div class="blocked-sites" id="blocked-sites"></div>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

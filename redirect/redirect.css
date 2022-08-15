@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  background: #ffbd59;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+}

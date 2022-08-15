@@ -1,0 +1,67 @@
+:root {
+  --ff: "Montserrat", "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --black: #333;
+}
+
+html {
+  width: 300px;
+  height: 500px;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--ff);
+  color: var(--black);
+}
+
+.blocked-sites {
+  list-style: none;
+  padding: 0;
+}
+
+label,
+.site {
+  font-size: 1rem;
+  color: var(--black);
+}
+
+.site {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.6rem;
+  padding: 0.2rem;
+}
+
+button {
+  height: 1.8rem;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.add-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.favicon {
+  width: 8%;
+}
+
+.add-site {
+  width: 80%;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.site:hover {
+  background: #f9f9f9;
+}
