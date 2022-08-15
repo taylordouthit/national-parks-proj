@@ -1,4 +1,4 @@
-import { debug } from "./debugger.js";
+import { debug } from "./debugger/debugger.js";
 /**
  * background.js communicates with the extension.
  * The extension sends the background (service work) which sites have
