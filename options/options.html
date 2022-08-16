@@ -11,15 +11,21 @@
     <div class="logo-container">
       <img src="../icons/logo.png" class="logo" />
     </div>
-    <div class="container">
+    <div id="message-container" class="message-container">
       <textarea
         id="inspirational-message"
         name="message"
         rows="4"
         cols="50"
       ></textarea>
-      <!-- Add save animation -->
-      <button id="save">Save</button>
+      <div class="save-container">
+        <button id="save">Save</button>
+        <img
+          id="checkmark"
+          class="checkmark"
+          src="../icons/checkmark-icon.png"
+        />
+      </div>
     </div>
     <script src="options.js" type="module"></script>
   </body>

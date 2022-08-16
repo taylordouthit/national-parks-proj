@@ -6,12 +6,34 @@ body {
   box-sizing: border-box;
   background: #ffbd59;
   display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
 }
 
 textarea {
   font-size: 2rem;
   margin-top: 10%;
   background-color: #ffbd59;
+  width: 100%;
+}
+
+.save-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+  width: 30px;
+  height: 30px;
+  margin-left: 1rem;
+}
+
+.rotate {
+  rotate: 360deg;
+  transition: rotate 1s;
 }
 
 button {

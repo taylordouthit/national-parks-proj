@@ -24,9 +24,22 @@ const addInspirationalTextFromStorage = async () => {
 const addClickEventToSaveButton = () => {
   const textareaElement = document.getElementById("inspirational-message");
   const saveButtonElement = document.getElementById("save");
+  const checkmarkElement = document.getElementById("checkmark");
   saveButtonElement.addEventListener("click", () => {
-    chrome.storage.local.set({
-      inspirationalMessage: textareaElement.value,
-    });
+    if (checkmarkElement && checkmarkElement.classList.contains("rotate")) {
+      checkmarkElement.classList.remove("rotate");
+    }
+    chrome.storage.local.set(
+      {
+        inspirationalMessage: textareaElement.value,
+      },
+      () => {
+        showCheckmark();
+      }
+    );
   });
+};
+
+const showCheckmark = () => {
+  document.getElementById("checkmark").classList.add("rotate");
 };
