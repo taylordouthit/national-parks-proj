@@ -1,30 +1,25 @@
-import { debug } from "./debugger/debugger.js";
 /**
  * background.js communicates with the extension.
  * The extension sends the background (service work) which sites have
  * been blocked in the UI. The service worker then works to update
  * the rules.
  */
-chrome.runtime.onMessage.addListener((message) => {
+
+chrome.runtime.onMessage.addListener(async (message) => {
   if (message.addBlockedSites) {
-    const rulesList = createRulesList(message.addBlockedSites);
-    const ruleSet = {
-      addRules: rulesList,
-    };
-    // hacky POS
-    const removeRule = {
-      addRules: [],
-      removeRuleIds: [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-      ],
-    };
-    chrome.declarativeNetRequest.updateDynamicRules(removeRule);
-    chrome.declarativeNetRequest.updateDynamicRules(ruleSet);
+    const options = createRuleOptions(message.addBlockedSites);
+
+    chrome.declarativeNetRequest.updateDynamicRules(options);
   }
 });
 
-const createRulesList = (listOfBlockedSites) => {
-  return listOfBlockedSites.map((site, index) => {
+/**
+ * Creates a list of rules to redirect each blocked site
+ * @param {string[]} listOfBlockedSites
+ * @returns {UpdateRuleOptions}
+ */
+const createRuleOptions = (listOfBlockedSites) => {
+  const rulesList = listOfBlockedSites.map((site, index) => {
     return {
       id: index + 1,
       priority: 1,
@@ -38,4 +33,13 @@ const createRulesList = (listOfBlockedSites) => {
       },
     };
   });
+
+  const wipeAway = Array.from(Array(50).keys(), (n) => n + 1);
+
+  const ruleOptions = {
+    removeRuleIds: wipeAway,
+    addRules: rulesList,
+  };
+
+  return ruleOptions;
 };
