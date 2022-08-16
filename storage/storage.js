@@ -7,7 +7,10 @@ export const getSiteFromLocalStorage = async (website) => {
 };
 
 export const getSitesFromLocalStorage = async () => {
-  return await chrome.storage.local.get(null);
+  // hacky, gets rid of inspirationalMessage
+  const key = "inspirationalMessage";
+  const { [key]: foo, ...sites } = await chrome.storage.local.get(null);
+  return await chrome.storage.local.get(sites);
 };
 
 export const removeSiteFromLocalStorage = (website) => {
