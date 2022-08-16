@@ -1,12 +1,21 @@
-button {
-  height: 30px;
-  width: 30px;
-  outline: none;
-  margin: 10px;
-  border: none;
-  border-radius: 2px;
+body {
+  margin: 0;
+  padding: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  background: #ffbd59;
+  display: flex;
 }
 
-button.current {
-  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+textarea {
+  font-size: 2rem;
+  margin-top: 10%;
+  background-color: #ffbd59;
+}
+
+button {
+  display: block;
+  font-size: 2rem;
+  margin-top: 2%;
 }

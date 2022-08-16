@@ -6,10 +6,8 @@ import { debug } from "./debugger/debugger.js";
  * the rules.
  */
 chrome.runtime.onMessage.addListener((message) => {
-  debug("Message received in service worker: ", message);
   if (message.addBlockedSites) {
     const rulesList = createRulesList(message.addBlockedSites);
-    debug("rulesList: ", rulesList);
     const ruleSet = {
       addRules: rulesList,
     };
@@ -27,7 +25,6 @@ chrome.runtime.onMessage.addListener((message) => {
 
 const createRulesList = (listOfBlockedSites) => {
   return listOfBlockedSites.map((site, index) => {
-    debug("site: ", site);
     return {
       id: index + 1,
       priority: 1,
