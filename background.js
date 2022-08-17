@@ -14,7 +14,7 @@ chrome.runtime.onMessage.addListener(async (message) => {
 });
 
 /**
- * Creates a list of rules to redirect each blocked site
+ * Creates a rule option containing the rules to update.
  * @param {string[]} listOfBlockedSites
  * @returns {UpdateRuleOptions}
  */

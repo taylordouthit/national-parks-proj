@@ -94,7 +94,9 @@ const addSite = async () => {
 };
 
 /**
- * Creates <div><img /><span>blockedsite.com</span><img /></div>
+ * Returns a <div><img /><span>blockedsite.com</span><img /></div>
+ * @param {string} addSiteInputValue
+ * @returns {HTMLDivElement}
  */
 const createSiteElement = (addSiteInputValue) => {
   // Create favicon

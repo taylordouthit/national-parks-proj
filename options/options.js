@@ -1,5 +1,6 @@
 /**
- * options.js
+ * options.js is for the option page logic which includes
+ * updating the message that displays on the redirect page.
  */
 document.addEventListener("DOMContentLoaded", async () => {
   addInspirationalTextFromStorage();
@@ -34,12 +35,15 @@ const addClickEventToSaveButton = () => {
         inspirationalMessage: textareaElement.value,
       },
       () => {
-        showCheckmark();
+        rotateCheckmark();
       }
     );
   });
 };
 
-const showCheckmark = () => {
+/**
+ * Rotates the checkmark to indicate a save to the user.
+ */
+const rotateCheckmark = () => {
   document.getElementById("checkmark").classList.add("rotate");
 };
