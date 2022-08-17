@@ -32,20 +32,10 @@
       "description": "Opens popup.html"
     }
   },
-  "declarative_net_request": {
-    "rule_resources": []
-  },
   "permissions": [
     "storage",
     "scripting",
-    "declarativeNetRequest",
-    "declarativeNetRequestFeedback"
+    "declarativeNetRequestWithHostAccess"
   ],
-  "host_permissions": ["<all_urls>"],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content-script.js"]
-    }
-  ]
+  "host_permissions": ["<all_urls>"]
 }
