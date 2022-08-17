@@ -48,7 +48,7 @@ const addSitesFromLocalStorageToDOM = async () => {
 const addKeypressListenerToInputAndAddIcon = () => {
   document.querySelectorAll(".add").forEach((element) => {
     element.addEventListener("keypress", (event) => {
-      if (event.key === "Enter") {
+      if (event.key === "Enter" && !inputIsBlank()) {
         addSite();
         clearInput();
       }

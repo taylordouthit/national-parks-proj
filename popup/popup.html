@@ -4,25 +4,33 @@
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <h1>Time to Focus</h1>
-    <img src="../icons/logo.png" class="logo" />
-    <div class="add-container">
-      <input
-        type="text"
-        name="add-site"
-        id="add-site"
-        class="add add-site"
-        placeholder="Enter site url"
-        tabindex="1"
-      />
-      <img
-        src="../icons/add-icon.png"
-        class="add icon add-icon"
-        id="add-icon"
-        tabindex="2"
-      />
+    <div class="popup">
+      <h1>Time to Focus</h1>
+      <img src="../icons/logo.png" class="logo" />
+      <div class="add-container">
+        <input
+          type="text"
+          name="add-site"
+          id="add-site"
+          class="add add-site"
+          placeholder="Enter site url"
+          tabindex="1"
+        />
+        <img
+          src="../icons/add-icon.png"
+          class="add icon add-icon"
+          id="add-icon"
+          tabindex="2"
+        />
+      </div>
+      <div class="blocked-sites-container">
+        <div class="blocked-sites" id="blocked-sites"></div>
+      </div>
+      <div class="footer">
+        <p>ctrl + shift + L to open popup</p>
+        <p>Icons by <a href="https://icons8.com/">icons8.com</a></p>
+      </div>
     </div>
-    <div class="blocked-sites" id="blocked-sites"></div>
     <script src="popup.js" type="module"></script>
   </body>
 </html>
