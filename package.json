@@ -1,0 +1,22 @@
+{
+  "name": "focus-site-blocker",
+  "version": "1.0.0",
+  "description": "A minimalist site blocker that allows you create a list of sites to block.",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylordouthit/focus-site-blocker.git"
+  },
+  "author": "taylor douthit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taylordouthit/focus-site-blocker/issues"
+  },
+  "homepage": "https://github.com/taylordouthit/focus-site-blocker#readme",
+  "devDependencies": {
+    "esbuild": "^0.15.5",
+    "fs-extra": "^10.1.0"
+  }
+}
