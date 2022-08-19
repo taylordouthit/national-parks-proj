@@ -77,19 +77,17 @@ const addClickListenerToAddIcon = () => {
  * site doesn't already exist.
  */
 const addSite = async () => {
-  const addSiteInputValue = document
-    .getElementById("add-site")
-    .value.toLowerCase();
+  const urlInputValue = document.getElementById("url").value.toLowerCase();
 
   const siteAlreadyExists =
-    Object.keys(await getSiteFromLocalStorage(addSiteInputValue)).length !== 0;
+    Object.keys(await getSiteFromLocalStorage(urlInputValue)).length !== 0;
 
   if (siteAlreadyExists) return;
 
   const blockedSitesContainerElement = document.getElementById("blocked-sites");
-  const blockedSiteElement = createSiteElement(addSiteInputValue);
+  const blockedSiteElement = createSiteElement(urlInputValue);
   blockedSitesContainerElement.appendChild(blockedSiteElement);
-  addSiteToLocalStorage(addSiteInputValue);
+  addSiteToLocalStorage(urlInputValue);
 
   const blockedSites = Object.keys(await getSitesFromLocalStorage());
   sendMessageToServiceWorker("addBlockedSites", blockedSites);
@@ -97,18 +95,18 @@ const addSite = async () => {
 
 /**
  * Returns a <div><img /><span>blockedsite.com</span><img /></div>
- * @param {string} addSiteInputValue
+ * @param {string} urlInputValue
  * @returns {HTMLDivElement}
  */
-const createSiteElement = (addSiteInputValue) => {
+const createSiteElement = (urlInputValue) => {
   // Create favicon
   const faviconImageElement = document.createElement("img");
   faviconImageElement.classList.add("favicon");
-  faviconImageElement.src = "https://www." + addSiteInputValue + "/favicon.ico";
+  faviconImageElement.src = "https://www." + urlInputValue + "/favicon.ico";
 
   // Create span containing website name
   const websiteTextElement = document.createElement("span");
-  websiteTextElement.innerText = addSiteInputValue;
+  websiteTextElement.innerText = urlInputValue;
 
   // Create trash icon
   const removeImageElement = document.createElement("img");
@@ -145,19 +143,19 @@ const createSiteElement = (addSiteInputValue) => {
  * Checks whether input is blank
  */
 const inputIsBlank = () => {
-  return document.getElementById("add-site").value === "";
+  return document.getElementById("url").value === "";
 };
 
 /**
  * Clears the input
  */
 const clearInput = () => {
-  document.getElementById("add-site").value = "";
+  document.getElementById("url").value = "";
 };
 
 /**
  * Focus input when opened
  */
 const focusInput = () => {
-  document.getElementById("add-site").focus();
+  document.getElementById("url").focus();
 };

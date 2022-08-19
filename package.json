@@ -17,6 +17,7 @@
   "homepage": "https://github.com/taylordouthit/focus-site-blocker#readme",
   "devDependencies": {
     "esbuild": "^0.15.5",
+    "eslint": "^8.22.0",
     "fs-extra": "^10.1.0"
   }
 }
