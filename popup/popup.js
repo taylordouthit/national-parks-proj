@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   addKeypressListenerToInputAndAddIcon();
 
   addClickListenerToAddIcon();
+
+  focusInput();
 });
 
 /**
@@ -151,4 +153,11 @@ const inputIsBlank = () => {
  */
 const clearInput = () => {
   document.getElementById("add-site").value = "";
+};
+
+/**
+ * Focus input when opened
+ */
+const focusInput = () => {
+  document.getElementById("add-site").focus();
 };

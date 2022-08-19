@@ -5,6 +5,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   addInspirationalTextFromStorage();
   addClickEventToSaveButton();
+  focusTextarea();
 });
 
 /**
@@ -46,4 +47,11 @@ const addClickEventToSaveButton = () => {
  */
 const rotateCheckmark = () => {
   document.getElementById("checkmark").classList.add("rotate");
+};
+
+/**
+ * Focus textarea when opened
+ */
+const focusTextarea = () => {
+  document.getElementById("inspirational-message").focus();
 };
