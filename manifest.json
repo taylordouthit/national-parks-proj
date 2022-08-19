@@ -33,10 +33,6 @@
       "description": "Opens popup.html"
     }
   },
-  "permissions": [
-    "storage",
-    "scripting",
-    "declarativeNetRequestWithHostAccess"
-  ],
+  "permissions": ["storage", "declarativeNetRequestWithHostAccess"],
   "host_permissions": ["<all_urls>"]
 }

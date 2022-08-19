@@ -8,7 +8,6 @@ Focus site blocker is a chrome browser extension that blocks websites for the sa
 
 # General Architecture
 
-- /debugger/ ----------- a debugging function
 - /icons/ -------------- icons used in project
 - /options/ ------------ options page
 - /popup/ -------------- popup modal
