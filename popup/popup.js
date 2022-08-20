@@ -77,7 +77,11 @@ const addClickListenerToAddIcon = () => {
  * site doesn't already exist.
  */
 const addSite = async () => {
-  const urlInputValue = document.getElementById("url").value.toLowerCase();
+  const urlInputValue = sanitizeInput(
+    document.getElementById("url").value.toLowerCase()
+  );
+
+  if (!urlInputValue) return;
 
   const siteAlreadyExists =
     Object.keys(await getSiteFromLocalStorage(urlInputValue)).length !== 0;
@@ -158,4 +162,17 @@ const clearInput = () => {
  */
 const focusInput = () => {
   document.getElementById("url").focus();
+};
+
+/**
+ * Replaces dangerous characters
+ * @param {string} input
+ * @returns {string}
+ */
+const sanitizeInput = (input) => {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/"/g, "&quot;")
+    .replace(/\*/g, "");
 };

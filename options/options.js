@@ -33,7 +33,7 @@ const addClickEventToSaveButton = () => {
     }
     chrome.storage.local.set(
       {
-        inspirationalMessage: textareaElement.value,
+        inspirationalMessage: sanitizeInput(textareaElement.value),
       },
       () => {
         rotateCheckmark();
@@ -54,4 +54,17 @@ const rotateCheckmark = () => {
  */
 const focusTextarea = () => {
   document.getElementById("inspirational-message").focus();
+};
+
+/**
+ * Replaces dangerous characters
+ * @param {string} input
+ * @returns {string}
+ */
+const sanitizeInput = (input) => {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/"/g, "&quot;")
+    .replace(/\*/g, "");
 };
