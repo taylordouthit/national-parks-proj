@@ -34,5 +34,6 @@
     }
   },
   "permissions": ["storage", "declarativeNetRequestWithHostAccess"],
-  "host_permissions": ["https://*/"]
+  "host_permissions": ["https://*/"],
+  "incognito": "not_allowed"
 }
