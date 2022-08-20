@@ -1,6 +1,6 @@
 {
   "name": "Focus Site Blocker",
-  "description": "A minimalist site blocker that allows you create a list of sites to block.",
+  "description": "A site blocker that allows you to create a list of sites to block.",
   "version": "1.0.0",
   "manifest_version": 3,
   "icons": {
