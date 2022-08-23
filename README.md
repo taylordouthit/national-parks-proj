@@ -2,6 +2,10 @@
 
 ![focus extension logo](icons/logo.png)
 
+# Chrome Web Store
+
+https://chrome.google.com/webstore/detail/focus-site-blocker/dpjahplifngjidkneihecbbcephoafgj/related
+
 # Description
 
 Focus site blocker is a chrome browser extension that blocks websites for the sake of productivity.
