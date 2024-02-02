@@ -16,9 +16,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 // Gives background color to states and defines the mousein/out/hover.
-let geojson = L.geoJson(statesData, {
-  style: style,
-  onEachFeature: onEachFeature,
+L.geoJson(statesData, {
+  style: style, // a functioning defining the path options for styling
+  onEachFeature: onEachFeature, // a funtion that will be called once for each created feature
 }).addTo(map);
 
 // Custom Info Control
@@ -35,6 +35,18 @@ L.geoJSON(nationalParksData, {
     );
   },
 }).addTo(map);
+
+// Styles features
+function style(feature) {
+  return {
+    fillColor: getColor(feature.properties.density),
+    weight: 2,
+    opacity: 1,
+    color: "white",
+    dashArray: "3",
+    fillOpacity: 0.7,
+  };
+}
 
 // Adding Some Color
 export function getColor(d) {
@@ -55,9 +67,18 @@ export function getColor(d) {
     : "#FFEDA0";
 }
 
+// Adds listeners on our state layers
+function onEachFeature(feature, layer) {
+  layer.on({
+    mouseover: highlightFeature,
+    mouseout: resetHighlight,
+    click: zoomToFeature,
+  });
+}
+
 // Highlights feature
 function highlightFeature(e) {
-  var layer = e.target;
+  let layer = e.target;
 
   layer.setStyle({
     weight: 5,
@@ -72,21 +93,17 @@ function highlightFeature(e) {
   info.update(layer.feature.properties);
 }
 
-// Styles features
-function style(feature) {
-  return {
-    fillColor: getColor(feature.properties.density),
+// Resets highlights on features
+function resetHighlight(e) {
+  let layer = e.target;
+
+  layer.setStyle({
     weight: 2,
     opacity: 1,
     color: "white",
     dashArray: "3",
     fillOpacity: 0.7,
-  };
-}
-
-// Resets highlights on features
-function resetHighlight(e) {
-  geojson.resetStyle(e.target);
+  });
 
   info.update();
 }
@@ -94,13 +111,4 @@ function resetHighlight(e) {
 // Zooms to feature
 function zoomToFeature(e) {
   map.fitBounds(e.target.getBounds());
-}
-
-// Adds listeners on our state layers
-function onEachFeature(feature, layer) {
-  layer.on({
-    mouseover: highlightFeature,
-    mouseout: resetHighlight,
-    click: zoomToFeature,
-  });
 }
