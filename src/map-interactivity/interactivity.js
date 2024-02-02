@@ -4,7 +4,7 @@ import { map } from "../index.js";
 // Styles features
 export function style(feature) {
   return {
-    fillColor: getColor(feature.properties.density),
+    fillColor: getColor(feature.properties.nationalParks),
     weight: 2,
     opacity: 1,
     color: "white",
@@ -15,21 +15,25 @@ export function style(feature) {
 
 // Adding Some Color
 export function getColor(d) {
-  return d > 1000
-    ? "#800026"
-    : d > 500
-    ? "#BD0026"
-    : d > 200
-    ? "#E31A1C"
-    : d > 100
-    ? "#FC4E2A"
-    : d > 50
-    ? "#FD8D3C"
-    : d > 20
-    ? "#FEB24C"
-    : d > 10
-    ? "#FED976"
-    : "#FFEDA0";
+  return d > 8
+    ? "#F9EFDB"
+    : d > 7
+    ? "#EBD9B4"
+    : d > 6
+    ? "#9DBC98"
+    : d > 5
+    ? "#638889"
+    : d > 4
+    ? "#C3E2C2"
+    : d > 3
+    ? "#EAECCC"
+    : d > 2
+    ? "#DBCC95"
+    : d > 1
+    ? "#CD8D7A"
+    : d > 0
+    ? "#AFC8AD"
+    : "#EEE7DA";
 }
 
 // Adds listeners on our state layers
