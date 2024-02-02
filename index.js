@@ -1,22 +1,21 @@
 import { statesData } from "./us-states.js";
 import { nationalParks } from "./nps-data.js";
+import { parkIcon } from "./components/park-icon.js";
+import { legend } from "./components/legend.js";
 
 // Map: used to create a map on a page and manipulate it.
 const map = L.map("map").setView([43, -114], 4);
 
-// our GeoJSON layer
-var geojson;
-
 // OpenStreetMap: https://www.openstreetmap.org/about
-const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 6,
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 8,
   minZoom: 3,
   attribution:
     '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
 // Adding Some Color
-function getColor(d) {
+export function getColor(d) {
   return d > 1000
     ? "#800026"
     : d > 500
@@ -45,7 +44,7 @@ function style(feature) {
   };
 }
 
-geojson = L.geoJson(statesData, { style }).addTo(map);
+let geojson = L.geoJson(statesData, { style }).addTo(map);
 
 // Adding Interaction
 function highlightFeature(e) {
@@ -116,31 +115,13 @@ info.update = function (props) {
 info.addTo(map);
 
 // Custom Legend Control
-var legend = L.control({ position: "bottomright" });
-
-legend.onAdd = function (map) {
-  var div = L.DomUtil.create("div", "info legend"),
-    grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-    labels = [];
-
-  // loop through our density intervals and generate a label with a colored square for each interval
-  for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +=
-      '<i style="background:' +
-      getColor(grades[i] + 1) +
-      '"></i> ' +
-      grades[i] +
-      (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
-  }
-
-  return div;
-};
-
 legend.addTo(map);
 
-// Add GeoJSON layer with markers to the map
+// Create a GeoJSON layer with custom icons
 L.geoJSON(nationalParks, {
   pointToLayer: function (feature, latlng) {
-    return L.marker(latlng).bindPopup(feature.properties.name);
+    return L.marker(latlng, { icon: parkIcon }).bindPopup(
+      feature.properties.name
+    );
   },
 }).addTo(map);
