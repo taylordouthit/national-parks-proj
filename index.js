@@ -1,7 +1,8 @@
 import { statesData } from "./us-states.js";
+import { nationalParks } from "./nps-data.js";
 
 // Map: used to create a map on a page and manipulate it.
-const map = L.map("map").setView([37.8, -96], 4);
+const map = L.map("map").setView([43, -114], 4);
 
 // our GeoJSON layer
 var geojson;
@@ -136,3 +137,10 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
+
+// Add GeoJSON layer with markers to the map
+L.geoJSON(nationalParks, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng).bindPopup(feature.properties.name);
+  },
+}).addTo(map);

@@ -1,11 +1,11 @@
 body {
-  background-color: #d4cdab;
+  background-color: #252926;
 }
 h1 {
-  color: #252926;
+  color: #fff;
 }
 #map {
-  height: 98vh;
+  height: 90vh;
 }
 .info {
   padding: 6px 8px;
