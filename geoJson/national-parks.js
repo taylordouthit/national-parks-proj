@@ -1,4 +1,4 @@
-export const nationalParks = {
+export const nationalParksData = {
   type: "FeatureCollection",
   features: [
     {

@@ -1,20 +1,20 @@
 {
-  "name": "focus-site-blocker",
+  "name": "national-parks-proj",
   "version": "1.0.0",
-  "description": "A minimalist site blocker that allows you create a list of sites to block.",
+  "description": "An app for tracking the national parks you have visted.",
   "scripts": {
     "build": "node build.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taylordouthit/focus-site-blocker.git"
+    "url": "git+https://github.com/taylordouthit/national-parks-proj.git"
   },
   "author": "taylor douthit",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/taylordouthit/focus-site-blocker/issues"
+    "url": "https://github.com/taylordouthit/national-parks-proj/issues"
   },
-  "homepage": "https://github.com/taylordouthit/focus-site-blocker#readme",
+  "homepage": "https://github.com/taylordouthit/national-parks-proj#readme",
   "devDependencies": {
     "esbuild": "^0.15.5",
     "eslint": "^8.22.0",
