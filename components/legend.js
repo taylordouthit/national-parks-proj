@@ -1,4 +1,4 @@
-import { getColor } from "../index.js";
+import { getColor } from "../map-interactivity/interactivity.js";
 
 export const legend = L.control({ position: "bottomright" });
 
