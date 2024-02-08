@@ -1,3 +1,5 @@
+import { checkedCount } from "../index.js";
+
 export const info = L.control();
 
 info.onAdd = function (map) {
@@ -9,12 +11,9 @@ info.onAdd = function (map) {
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
   this._div.innerHTML =
-    "<h4>US Population Density</h4>" +
+    `<h4>National Parks Completed</h4>` +
     (props
-      ? "<b>" +
-        props.name +
-        "</b><br />" +
-        props.density +
-        " people / mi<sup>2</sup>"
-      : "Hover over a state");
+      ? `<b> ${props.name} </b> <br/>
+         ${checkedCount} / ${props.nationalParksCount} Park(s)`
+      : `${checkedCount} / 63`);
 };

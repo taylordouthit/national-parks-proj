@@ -4,7 +4,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "01",
-      properties: { name: "Alabama", density: 94.65, nationalParks: 0 },
+      properties: { name: "Alabama", density: 94.65, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -49,7 +49,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "02",
-      properties: { name: "Alaska", density: 1.264, nationalParks: 8 },
+      properties: { name: "Alaska", density: 1.264, nationalParksCount: 8 },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1289,7 +1289,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "04",
-      properties: { name: "Arizona", density: 57.05, nationalParks: 3 },
+      properties: { name: "Arizona", density: 57.05, nationalParksCount: 3 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1333,7 +1333,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "05",
-      properties: { name: "Arkansas", density: 56.43, nationalParks: 1 },
+      properties: { name: "Arkansas", density: 56.43, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1382,7 +1382,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "06",
-      properties: { name: "California", density: 241.7, nationalParks: 7 },
+      properties: { name: "California", density: 241.7, nationalParksCount: 7 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1487,7 +1487,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "08",
-      properties: { name: "Colorado", density: 49.33, nationalParks: 4 },
+      properties: { name: "Colorado", density: 49.33, nationalParksCount: 4 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1515,7 +1515,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "09",
-      properties: { name: "Connecticut", density: 739.1, nationalParks: 0 },
+      properties: {
+        name: "Connecticut",
+        density: 739.1,
+        nationalParksCount: 0,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1543,7 +1547,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "10",
-      properties: { name: "Delaware", density: 464.3, nationalParks: 0 },
+      properties: { name: "Delaware", density: 464.3, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1571,7 +1575,7 @@ export var statesData = {
       properties: {
         name: "District of Columbia",
         density: 10065,
-        nationalParks: 0,
+        nationalParksCount: 0,
       },
       geometry: {
         type: "Polygon",
@@ -1589,7 +1593,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "12",
-      properties: { name: "Florida", density: 353.4, nationalParks: 3 },
+      properties: { name: "Florida", density: 353.4, nationalParksCount: 3 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1679,7 +1683,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "13",
-      properties: { name: "Georgia", density: 169.5, nationalParks: 0 },
+      properties: { name: "Georgia", density: 169.5, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1742,7 +1746,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "15",
-      properties: { name: "Hawaii", density: 214.1, nationalParks: 2 },
+      properties: { name: "Hawaii", density: 214.1, nationalParksCount: 2 },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1821,7 +1825,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "16",
-      properties: { name: "Idaho", density: 19.15, nationalParks: 0 },
+      properties: { name: "Idaho", density: 19.15, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1899,7 +1903,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "17",
-      properties: { name: "Illinois", density: 231.5, nationalParks: 0 },
+      properties: { name: "Illinois", density: 231.5, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -1978,7 +1982,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "18",
-      properties: { name: "Indiana", density: 181.7, nationalParks: 1 },
+      properties: { name: "Indiana", density: 181.7, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2036,7 +2040,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "19",
-      properties: { name: "Iowa", density: 54.81, nationalParks: 0 },
+      properties: { name: "Iowa", density: 54.81, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2098,7 +2102,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "20",
-      properties: { name: "Kansas", density: 35.09, nationalParks: 0 },
+      properties: { name: "Kansas", density: 35.09, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2123,7 +2127,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "21",
-      properties: { name: "Kentucky", density: 110, nationalParks: 1 },
+      properties: { name: "Kentucky", density: 110, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2210,7 +2214,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "22",
-      properties: { name: "Louisiana", density: 105, nationalParks: 0 },
+      properties: { name: "Louisiana", density: 105, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2298,7 +2302,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "23",
-      properties: { name: "Maine", density: 43.04, nationalParks: 1 },
+      properties: { name: "Maine", density: 43.04, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2376,7 +2380,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "24",
-      properties: { name: "Maryland", density: 596.3, nationalParks: 0 },
+      properties: { name: "Maryland", density: 596.3, nationalParksCount: 0 },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -2458,7 +2462,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "25",
-      properties: { name: "Massachusetts", density: 840.2, nationalParks: 0 },
+      properties: {
+        name: "Massachusetts",
+        density: 840.2,
+        nationalParksCount: 0,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2505,7 +2513,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "26",
-      properties: { name: "Michigan", density: 173.9, nationalParks: 1 },
+      properties: { name: "Michigan", density: 173.9, nationalParksCount: 1 },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -2683,7 +2691,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "27",
-      properties: { name: "Minnesota", density: 67.14, nationalParks: 1 },
+      properties: { name: "Minnesota", density: 67.14, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2778,7 +2786,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "28",
-      properties: { name: "Mississippi", density: 63.5, nationalParks: 0 },
+      properties: { name: "Mississippi", density: 63.5, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2836,7 +2844,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "29",
-      properties: { name: "Missouri", density: 87.26, nationalParks: 1 },
+      properties: { name: "Missouri", density: 87.26, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2901,7 +2909,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "30",
-      properties: { name: "Montana", density: 6.858, nationalParks: 1 },
+      properties: { name: "Montana", density: 6.858, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -2965,7 +2973,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "31",
-      properties: { name: "Nebraska", density: 23.97, nationalParks: 0 },
+      properties: { name: "Nebraska", density: 23.97, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3006,7 +3014,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "32",
-      properties: { name: "Nevada", density: 24.8, nationalParks: 1 },
+      properties: { name: "Nevada", density: 24.8, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3039,7 +3047,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "33",
-      properties: { name: "New Hampshire", density: 147, nationalParks: 0 },
+      properties: {
+        name: "New Hampshire",
+        density: 147,
+        nationalParksCount: 0,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3079,7 +3091,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "34",
-      properties: { name: "New Jersey", density: 1189, nationalParks: 0 },
+      properties: { name: "New Jersey", density: 1189, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3123,7 +3135,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "35",
-      properties: { name: "New Mexico", density: 17.16, nationalParks: 2 },
+      properties: { name: "New Mexico", density: 17.16, nationalParksCount: 2 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3152,7 +3164,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "36",
-      properties: { name: "New York", density: 412.3, nationalParks: 0 },
+      properties: { name: "New York", density: 412.3, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3232,7 +3244,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "37",
-      properties: { name: "North Carolina", density: 198.2, nationalParks: 1 },
+      properties: {
+        name: "North Carolina",
+        density: 198.2,
+        nationalParksCount: 1,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3305,7 +3321,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "38",
-      properties: { name: "North Dakota", density: 9.916, nationalParks: 1 },
+      properties: {
+        name: "North Dakota",
+        density: 9.916,
+        nationalParksCount: 1,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3333,7 +3353,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "39",
-      properties: { name: "Ohio", density: 281.9, nationalParks: 1 },
+      properties: { name: "Ohio", density: 281.9, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3392,7 +3412,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "40",
-      properties: { name: "Oklahoma", density: 55.22, nationalParks: 0 },
+      properties: { name: "Oklahoma", density: 55.22, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3449,7 +3469,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "41",
-      properties: { name: "Oregon", density: 40.33, nationalParks: 1 },
+      properties: { name: "Oregon", density: 40.33, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3517,7 +3537,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "42",
-      properties: { name: "Pennsylvania", density: 284.3, nationalParks: 0 },
+      properties: {
+        name: "Pennsylvania",
+        density: 284.3,
+        nationalParksCount: 0,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3562,7 +3586,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "44",
-      properties: { name: "Rhode Island", density: 1006, nationalParks: 0 },
+      properties: {
+        name: "Rhode Island",
+        density: 1006,
+        nationalParksCount: 0,
+      },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -3595,7 +3623,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "45",
-      properties: { name: "South Carolina", density: 155.4, nationalParks: 1 },
+      properties: {
+        name: "South Carolina",
+        density: 155.4,
+        nationalParksCount: 1,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3651,7 +3683,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "46",
-      properties: { name: "South Dakota", density: 98.07, nationalParks: 2 },
+      properties: {
+        name: "South Dakota",
+        density: 98.07,
+        nationalParksCount: 2,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3692,7 +3728,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "47",
-      properties: { name: "Tennessee", density: 88.08, nationalParks: 1 },
+      properties: { name: "Tennessee", density: 88.08, nationalParksCount: 1 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3747,7 +3783,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "48",
-      properties: { name: "Texas", density: 98.07, nationalParks: 2 },
+      properties: { name: "Texas", density: 98.07, nationalParksCount: 2 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3911,7 +3947,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "49",
-      properties: { name: "Utah", density: 34.3, nationalParks: 5 },
+      properties: { name: "Utah", density: 34.3, nationalParksCount: 5 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3935,7 +3971,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "50",
-      properties: { name: "Vermont", density: 67.73, nationalParks: 0 },
+      properties: { name: "Vermont", density: 67.73, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -3975,7 +4011,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "51",
-      properties: { name: "Virginia", density: 204.5, nationalParks: 1 },
+      properties: { name: "Virginia", density: 204.5, nationalParksCount: 1 },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -4077,7 +4113,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "53",
-      properties: { name: "Washington", density: 102.6, nationalParks: 3 },
+      properties: { name: "Washington", density: 102.6, nationalParksCount: 3 },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -4171,7 +4207,11 @@ export var statesData = {
     {
       type: "Feature",
       id: "54",
-      properties: { name: "West Virginia", density: 77.06, nationalParks: 1 },
+      properties: {
+        name: "West Virginia",
+        density: 77.06,
+        nationalParksCount: 1,
+      },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -4248,7 +4288,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "55",
-      properties: { name: "Wisconsin", density: 105.2, nationalParks: 0 },
+      properties: { name: "Wisconsin", density: 105.2, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -4335,7 +4375,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "56",
-      properties: { name: "Wyoming", density: 5.851, nationalParks: 2 },
+      properties: { name: "Wyoming", density: 5.851, nationalParksCount: 2 },
       geometry: {
         type: "Polygon",
         coordinates: [
@@ -4360,7 +4400,7 @@ export var statesData = {
     {
       type: "Feature",
       id: "72",
-      properties: { name: "Puerto Rico", density: 1082, nationalParks: 0 },
+      properties: { name: "Puerto Rico", density: 1082, nationalParksCount: 0 },
       geometry: {
         type: "Polygon",
         coordinates: [

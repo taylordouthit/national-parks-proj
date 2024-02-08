@@ -7,6 +7,9 @@ import { style, onEachFeature } from "./map-interactivity/interactivity.js";
 import { config } from "../config.js";
 import { fetchAllParks } from "./api.js";
 
+// Temporary Store
+export let checkedCount = 0;
+
 // Create a map
 export const map = L.map("map").setView([43, -114], 4);
 
@@ -30,19 +33,37 @@ info.addTo(map);
 // Custom Legend Control
 legend.addTo(map);
 
-if (config.useApi) {
-  const remoteParksGeoJSON = await fetchAllParks();
-  L.geoJSON(remoteParksGeoJSON, {
-    pointToLayer: function (feature, latlng) {
-      return L.marker(latlng).bindPopup(feature.properties.name);
-    },
-  }).addTo(map);
-} else {
-  L.geoJSON(localParksGeoJSON, {
-    pointToLayer: function (feature, latlng) {
-      return L.marker(latlng, { icon: parkIcon }).bindPopup(
-        feature.properties.name
-      );
-    },
-  }).addTo(map);
-}
+// Array to keep track of checkbox states
+var checkboxStates = {};
+
+// Fetch it or use local data
+const nationalParksGeoJSON = config.useApi
+  ? await fetchAllParks()
+  : localParksGeoJSON;
+
+// Add markers
+L.geoJSON(nationalParksGeoJSON, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng)
+      .bindPopup(
+        `<input type="checkbox" id=${feature.properties.name} class="park-checkbox" data-name="${feature.properties.name}"> <label for=${feature.properties.name} /> ${feature.properties.name}`
+      )
+      .on("popupopen", function () {
+        var checkbox = document.querySelector(
+          `input[data-name="${feature.properties.name}"]`
+        );
+        checkbox.checked = checkboxStates[feature.properties.name] || false; // Restore checkbox state
+        checkbox.addEventListener("change", function () {
+          checkboxStates[feature.properties.name] = this.checked;
+          updateCheckedCount();
+          info.update();
+        });
+      });
+  },
+}).addTo(map);
+
+// Function to update count of checked checkboxes
+const updateCheckedCount = () => {
+  checkedCount = Object.values(checkboxStates).filter(Boolean).length;
+  console.log("Checked parks count:", checkedCount);
+};

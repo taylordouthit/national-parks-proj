@@ -4,7 +4,7 @@ import { map } from "../index.js";
 // Styles features
 export function style(feature) {
   return {
-    fillColor: getColor(feature.properties.nationalParks),
+    fillColor: getColor(feature.properties.nationalParksCount),
     weight: 2,
     opacity: 1,
     color: "white",
